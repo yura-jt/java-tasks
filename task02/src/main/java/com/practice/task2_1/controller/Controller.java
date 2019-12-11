@@ -3,6 +3,7 @@ package com.practice.task2_1.controller;
 import com.practice.task2_1.model.Figure;
 import com.practice.task2_1.model.FigureType;
 import com.practice.task2_1.model.Shape;
+import com.practice.task2_1.utils.DataGenerator;
 import com.practice.task2_1.view.View;
 
 public class Controller {
@@ -15,6 +16,9 @@ public class Controller {
     }
 
     public void run() {
+        Shape[] figures = DataGenerator.getFilledShapeArray(10);
+        figure.setFigures(figures);
+
         printFigures();
         getTotalArea();
         getAreaSumByFigureType(FigureType.RECTANGLE);

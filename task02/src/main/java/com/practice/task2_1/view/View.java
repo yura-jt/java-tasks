@@ -4,7 +4,7 @@ import com.practice.task2_1.model.Shape;
 
 public class View {
     public final static String PRINT_SORTED_BY_COLOR_MESSAGE = "\n--------- Printing arrays of geometry figures sorted by color: ----------";
-    public final static String PRINT_SORTED_BY_AREA_MESSAGE = "\n--------- Printing arrays of geometry figures sorted by area: ----------";
+    public final static String PRINT_SORTED_BY_AREA_MESSAGE = "\n--------- Printing arrays of geometry figures sorted by area: -----------";
 
     public final static String DELIMITER = "-------------------------------------------------------------------------";
 
