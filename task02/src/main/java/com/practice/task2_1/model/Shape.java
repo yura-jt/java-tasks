@@ -1,4 +1,4 @@
-package com.practice.task2_1;
+package com.practice.task2_1.model;
 
 public abstract class Shape implements Drawable {
     private String colorShape;
@@ -18,7 +18,7 @@ public abstract class Shape implements Drawable {
     @Override
     public String toString() {
         return getClass().getSimpleName() +
-                ": colorShape = " + colorShape;
+                ": color = " + colorShape;
     }
 
     public abstract double calcArea();

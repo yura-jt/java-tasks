@@ -1,4 +1,4 @@
-package com.practice.task2_1;
+package com.practice.task2_1.model;
 
 public class Circle extends Shape {
     private double radius;

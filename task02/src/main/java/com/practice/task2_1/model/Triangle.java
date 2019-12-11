@@ -1,18 +1,18 @@
-package com.practice.task2_1;
+package com.practice.task2_1.model;
 
-public class Rectangle extends Shape {
-    private double width;
+public class Triangle extends Shape {
+    private double base;
     private double height;
 
-    public Rectangle(String colorShape, double width, double height) {
+    public Triangle(String colorShape, double base, double height) {
         super(colorShape);
-        this.width = width;
+        this.base = base;
         this.height = height;
     }
 
     @Override
     public double calcArea() {
-        return width * height;
+        return (base * height) / 2;
     }
 
     @Override
@@ -23,6 +23,6 @@ public class Rectangle extends Shape {
     @Override
     public String toString() {
         return super.toString() +
-                ", width = " + width + ", height = " + height;
+                ", base = " + base + ", height = " + height;
     }
 }
