@@ -65,7 +65,7 @@ public class DataGenerator {
         return getRandomInt(200, 1400);
     }
 
-    private static int getRandomInt(int from, int to) {
+    public static int getRandomInt(int from, int to) {
         return ThreadLocalRandom.current().nextInt(from, to);
     }
 

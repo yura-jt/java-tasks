@@ -2,8 +2,8 @@ package com.practice.task2_1.controller;
 
 import com.practice.task2_1.model.Figure;
 import com.practice.task2_1.model.FigureType;
-import com.practice.task2_1.model.Shape;
-import com.practice.task2_1.utils.DataGenerator;
+import com.practice.task2_1.model.entity.Shape;
+import com.practice.task2_1.view.Message;
 import com.practice.task2_1.view.View;
 
 public class Controller {
@@ -16,45 +16,63 @@ public class Controller {
     }
 
     public void run() {
-        Shape[] figures = DataGenerator.getFilledShapeArray(10);
-        figure.setFigures(figures);
+        Menu menu = new Menu(this, view);
+        menu.initiateStartMenu();
+    }
 
+    public void addFigureToArray(Shape shape) {
+        Shape[] figures = figure.getFigures();
+        Shape[] newArray = new Shape[figures.length + 1];
+        System.arraycopy(figures, 0, newArray, 0, figures.length);
+        newArray[newArray.length - 1] = shape;
+        setFigureArray(newArray);
+    }
+
+    public void setFigureArray(Shape[] array) {
+        figure.setFigures(array);
+        view.printMessage(Message.PRINT_ARRAY_UPDATED);
         printFigures();
-        getTotalArea();
-        getAreaSumByFigureType(FigureType.RECTANGLE);
-        getAreaSumByFigureType(FigureType.TRIANGLE);
-        getAreaSumByFigureType(FigureType.CIRCLE);
-        sortFiguresByArea();
-        sortFiguresByColor();
     }
 
-    private void printFigures() {
+    public void printFigures() {
         Shape[] figures = figure.getFigures();
-        view.printFiguresArray(figures);
+        String result = ShapeConverter.convertArrayToString(figures);
+        view.printMessage(result);
     }
 
-    private void getTotalArea() {
-        FigureType[] allTypes = FigureType.values();
-        double sum = figure.getFigureAreaSum(allTypes);
-        view.printTotalArea(sum);
+    public void getTotalArea() {
+        double sum = figure.getTotalSum();
+        String result = ShapeConverter.convertAreaSumMessage(sum, "figure");
+        view.printMessage(result);
     }
 
-    private void getAreaSumByFigureType(FigureType figureType) {
-        double sum = figure.getFigureAreaSum(figureType);
-        view.printSumAreaByType(sum, figureType.name().toLowerCase());
+    public void getAreaSumByFigureType(FigureType... figureTypes) {
+        double sum = figure.getFiguresAreaSum(figureTypes);
+        String result = ShapeConverter.convertAreaSumMessage(sum, figureTypes);
+        view.printMessage(result);
     }
 
-    private void sortFiguresByArea() {
-        figure.sortFiguresByArea();
-        Shape[] figures = figure.getFigures();
-        view.printMessage(View.PRINT_SORTED_BY_AREA_MESSAGE);
-        view.printFiguresArray(figures);
+    public void sortFiguresByArea() {
+        Shape[] array = figure.sortFiguresByArea();
+        String result = ShapeConverter.convertArrayToString(array);
+
+        view.printMessage(Message.PRINT_SORTED_BY_AREA_MESSAGE);
+        view.printMessage(result);
     }
 
-    private void sortFiguresByColor() {
-        figure.sortFiguresByColor();
-        Shape[] figures = figure.getFigures();
-        view.printMessage(View.PRINT_SORTED_BY_COLOR_MESSAGE);
-        view.printFiguresArray(figures);
+    public void sortFiguresByColor() {
+        Shape[] array = figure.sortFiguresByColor();
+        String result = ShapeConverter.convertArrayToString(array);
+
+        view.printMessage(Message.PRINT_SORTED_BY_COLOR_MESSAGE);
+        view.printMessage(result);
+    }
+
+    public void sortFiguresByType() {
+        Shape[] array = figure.sortFiguresByType();
+        String result = ShapeConverter.convertArrayToString(array);
+
+        view.printMessage(Message.PRINT_SORTED_BY_TYPE_MESSAGE);
+        view.printMessage(result);
     }
 }

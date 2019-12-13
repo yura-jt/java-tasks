@@ -16,6 +16,6 @@ public class Exit extends GeneralCommand {
 
     @Override
     public void execute(String command) {
-        throw new ExitException("Program is closing. Good-bye!");
+        throw new ExitException("* * * Program is closing. Good-bye! * * *");
     }
 }

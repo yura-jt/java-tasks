@@ -1,10 +1,12 @@
-package com.practice.task2_1.model;
+package com.practice.task2_1.model.entity;
+
+import com.practice.task2_1.model.Color;
 
 public class Rectangle extends Shape {
     private double width;
     private double height;
 
-    public Rectangle(String colorShape, double width, double height) {
+    public Rectangle(Color colorShape, double width, double height) {
         super(colorShape);
         this.width = width;
         this.height = height;
@@ -13,11 +15,6 @@ public class Rectangle extends Shape {
     @Override
     public double calcArea() {
         return width * height;
-    }
-
-    @Override
-    public void draw() {
-        System.out.printf("%s, area = %.2f\n", this, calcArea());
     }
 
     @Override

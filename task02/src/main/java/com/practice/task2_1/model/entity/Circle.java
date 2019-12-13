@@ -1,9 +1,11 @@
-package com.practice.task2_1.model;
+package com.practice.task2_1.model.entity;
+
+import com.practice.task2_1.model.Color;
 
 public class Circle extends Shape {
     private double radius;
 
-    public Circle(String colorShape, double radius) {
+    public Circle(Color colorShape, double radius) {
         super(colorShape);
         this.radius = radius;
     }
@@ -11,11 +13,6 @@ public class Circle extends Shape {
     @Override
     public double calcArea() {
         return Math.PI * radius * radius;
-    }
-
-    @Override
-    public void draw() {
-        System.out.printf("%s, area = %.2f\n", this, calcArea());
     }
 
     @Override

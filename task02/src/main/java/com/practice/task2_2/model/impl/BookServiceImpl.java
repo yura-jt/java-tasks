@@ -15,7 +15,7 @@ public class BookServiceImpl implements BookService {
         int count = 0;
         int[] indexes = new int[books.length];
         for (int i = 0; i < books.length; i++) {
-            if (books[i].getAuthor().equals(name)) {
+            if (books[i].getAuthor().equalsIgnoreCase(name)) {
                 indexes[count++] = i;
             }
         }
@@ -39,7 +39,7 @@ public class BookServiceImpl implements BookService {
         int count = 0;
         int[] indexes = new int[books.length];
         for (int i = 0; i < books.length; i++) {
-            if (books[i].getPublisher().equals(publisher)) {
+            if (books[i].getPublisher().equalsIgnoreCase(publisher)) {
                 indexes[count++] = i;
             }
         }

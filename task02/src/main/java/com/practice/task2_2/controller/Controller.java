@@ -3,6 +3,7 @@ package com.practice.task2_2.controller;
 import com.practice.task2_2.controller.command.*;
 import com.practice.task2_2.controller.exception.ExitException;
 import com.practice.task2_2.model.Model;
+import com.practice.task2_2.view.Message;
 import com.practice.task2_2.view.View;
 
 import java.util.ArrayList;
@@ -18,11 +19,12 @@ public class Controller {
         commands.add(new Get(view, model));
         commands.add(new Sort(view, model));
         commands.add(new Fill(view, model));
+        commands.add(new Demo(view, model));
         commands.add(new Exit(view, model));
     }
 
     public void processBooks() {
-        view.printMessage(View.MENU_PROMPT);
+        view.printMessage(Message.MENU_PROMPT);
         while (true) {
             try {
                 String inputCommand = view.getCommandFromConsole();

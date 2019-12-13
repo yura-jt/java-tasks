@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class Model {
     private BookService bookService;
-    private Book[] books;
+    private Book[] books = new Book[0];
 
     public Book[] getBooks() {
         return books;
@@ -21,8 +21,10 @@ public class Model {
         this.bookService = new BookServiceImpl(books);
     }
 
-    public void sortBooksByPublisher() {
-        Arrays.sort(books, getPublisherComparator());
+    public Book[] sortBooksByPublisher() {
+        Book[] sortedCopy = Arrays.copyOf(books, books.length);
+        Arrays.sort(sortedCopy, getPublisherComparator());
+        return sortedCopy;
     }
 
     private Comparator<Book> getPublisherComparator() {

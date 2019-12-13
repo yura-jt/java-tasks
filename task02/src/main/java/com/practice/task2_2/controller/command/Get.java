@@ -2,6 +2,7 @@ package com.practice.task2_2.controller.command;
 
 import com.practice.task2_2.model.Book;
 import com.practice.task2_2.model.Model;
+import com.practice.task2_2.view.Message;
 import com.practice.task2_2.view.View;
 
 public class Get extends GeneralCommand {
@@ -31,7 +32,11 @@ public class Get extends GeneralCommand {
                 result = model.getPublishedAfterYear(Integer.parseInt(arg));
             }
         }
-        view.printBooks(result);
+        if (result.length == 0) {
+            view.printMessage(Message.DATA_NOT_FOUND_MESSAGE);
+        } else {
+            view.printBooks(result);
+        }
     }
 
     private String makeArgString(String command, String key) {

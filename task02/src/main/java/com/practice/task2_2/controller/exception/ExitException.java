@@ -6,6 +6,5 @@ public class ExitException extends RuntimeException {
     }
 
     public ExitException() {
-
     }
 }
