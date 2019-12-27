@@ -32,19 +32,16 @@ public class Controller {
             int key = inputController.getIntFromConsole();
             if (key == 1) {
                 addDepartment();
-                printStore();
             } else if (key == 2) {
                 deleteDepartment();
-                printStore();
             } else if (key == 3) {
                 redeployDepartment();
-                printStore();
             } else if (key == 4) {
                 deliverGoods();
-                printStore();
             } else if (key == 5) {
                 isExit = true;
             }
+            printStore();
         }
     }
 

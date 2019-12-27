@@ -5,7 +5,7 @@ import com.practice.task3_2.view.Message;
 import com.practice.task3_2.view.View;
 
 public class InputController {
-    View view;
+    private View view;
 
     public InputController(View view) {
         this.view = view;
