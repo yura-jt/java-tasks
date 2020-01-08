@@ -4,12 +4,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * {@link InputUtility} is class that responsible for getting input from user through the console.
+ */
 public class InputUtility {
     private static final List<String> COMMANDS = Arrays.asList("FILL", "GET", "SORT", "EXIT", "DEMO");
     private static final List<String> KEYS = Arrays.asList("AUTHOR", "PUBLISHER", "YEAR");
 
     private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * This method gets user input from console as String
+     *
+     * @param view view component, for providing interface interaction with user
+     * @return a String contains input text, provided by user
+     */
     public static String getStringFromConsole(View view) {
         boolean isValid = false;
         String command = "";

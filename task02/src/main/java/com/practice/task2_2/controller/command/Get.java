@@ -5,16 +5,37 @@ import com.practice.task2_2.model.Model;
 import com.practice.task2_2.view.Message;
 import com.practice.task2_2.view.View;
 
+/**
+ * {@link Get} is a command, that provides receiving books by query.
+ */
 public class Get extends GeneralCommand {
+    /**
+     * Creates a Get command instance, initialize it with view and
+     * model component.
+     *
+     * @param model model component
+     * @param view  view component
+     */
     public Get(View view, Model model) {
         super(view, model);
     }
 
+    /**
+     * This method check if provided string contains valid Get command
+     *
+     * @param command command to validate
+     * @return {@code true} if command is valid, {@code false} otherwise
+     */
     @Override
     public boolean isValid(String command) {
         return command.startsWith("GET");
     }
 
+    /**
+     * This method executes Get command
+     *
+     * @param command command to execute
+     */
     @Override
     public void execute(String command) {
         String key = command.split(" ")[1];

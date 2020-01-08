@@ -6,16 +6,37 @@ import com.practice.task2_2.utils.DataGenerator;
 import com.practice.task2_2.view.Message;
 import com.practice.task2_2.view.View;
 
+/**
+ * {@link Demo} is a command, that provides full-scale app demonstration.
+ */
 public class Demo extends GeneralCommand {
+    /**
+     * Creates a Demo command instance, initialize it with view and
+     * model component.
+     *
+     * @param model model component
+     * @param view  view component
+     */
     public Demo(View view, Model model) {
         super(view, model);
     }
 
+    /**
+     * This method check if provided string contains valid Demo command
+     *
+     * @param command command to validate
+     * @return {@code true} if command is valid, {@code false} otherwise
+     */
     @Override
     public boolean isValid(String command) {
         return command.startsWith("DEMO");
     }
 
+    /**
+     * This method executes Demo command and shows application capabilities
+     *
+     * @param command command to execute
+     */
     @Override
     public void execute(String command) {
         createDataSource();

@@ -1,5 +1,8 @@
 package com.practice.task2_2.model;
 
+/**
+ * Defines an API for getting {@link Book} objects.
+ */
 public interface BookService {
     Book[] getByAuthor(String name);
 

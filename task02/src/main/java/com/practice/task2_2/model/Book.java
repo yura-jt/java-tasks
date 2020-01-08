@@ -2,7 +2,11 @@ package com.practice.task2_2.model;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Objects;
 
+/**
+ * {@link Book} is an entity that represent book abstraction within 'Book Manager' app.
+ */
 public class Book {
     private String title;
     private String author;
@@ -76,5 +80,23 @@ public class Book {
                 ", pageAmount = " + pageAmount +
                 ", price = " + price.setScale(2, RoundingMode.HALF_UP) +
                 "$";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return year == book.year &&
+                pageAmount == book.pageAmount &&
+                title.equals(book.title) &&
+                author.equals(book.author) &&
+                Objects.equals(publisher, book.publisher) &&
+                Objects.equals(price, book.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, publisher, year, pageAmount, price);
     }
 }

@@ -20,7 +20,7 @@ public class ContactManagerTest {
     }
 
     @Test
-    void getContacts() {
+    public void getContacts() {
         List<Contact> actual = contactManager.getContacts();
         List<Contact> expected = TestHelper.getSourceData();
         assertThat(actual, is(expected));

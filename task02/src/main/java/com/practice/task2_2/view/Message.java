@@ -1,5 +1,8 @@
 package com.practice.task2_2.view;
 
+/**
+ * {@link Message} is an utility class, containing constants of app interface messages.
+ */
 public class Message {
     public static final String DATA_NOT_FOUND_MESSAGE = "Data not found. No entries match your request.\n";
     public static final String INPUT_MESSAGE = "Please, enter the command:";

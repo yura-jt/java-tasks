@@ -9,10 +9,20 @@ import com.practice.task2_2.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * {@link Controller} is class responsible for Controller component in MVC model of 'Book Manager' app.
+ */
 public class Controller {
     private View view;
     private List<Command> commands;
 
+    /**
+     * Creates an Controller instance, initialize it with view component and
+     * setting up operation commands.
+     *
+     * @param model model component
+     * @param view  view component
+     */
     public Controller(Model model, View view) {
         this.view = view;
         commands = new ArrayList<>();
@@ -23,6 +33,9 @@ public class Controller {
         commands.add(new Exit(view, model));
     }
 
+    /**
+     * Run Main menu and interacts with user
+     **/
     public void processBooks() {
         view.printMessage(Message.MENU_PROMPT);
         while (true) {
