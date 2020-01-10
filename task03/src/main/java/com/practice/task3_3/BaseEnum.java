@@ -56,8 +56,6 @@ public abstract class BaseEnum<E extends BaseEnum>
 
     @Override
     public final int compareTo(BaseEnum o) {
-//        BaseEnum<?> other = o;
-//        BaseEnum<E> self = this;
         return this.ordinal - o.ordinal;
     }
 
@@ -77,6 +75,7 @@ public abstract class BaseEnum<E extends BaseEnum>
         throw new CloneNotSupportedException();
     }
 
+    @SuppressWarnings("deprecated")
     protected final void finalize() {
     }
 

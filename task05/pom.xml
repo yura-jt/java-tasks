@@ -8,6 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>task03</artifactId>
+
+    <artifactId>task05</artifactId>
 
 </project>
